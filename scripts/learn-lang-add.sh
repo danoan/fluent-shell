@@ -8,13 +8,11 @@ function add_mot()
   MOT=$2
   TOTAL_LINE=$3
   BOOK_ID=$4
-  WORD_LIBRARY=$5
-  IGNORED_LIBRARY=$6
 
-  I=$(grep -w "^$MOT" $IGNORED_LIBRARY | wc -l)
+  I=$(grep -w "^$MOT" $LLG_IGNORED_LIBRARY | wc -l)
   if [ "$I" == "0" ]
   then
-    echo "$MOT $BOOK_ID" >> $WORD_LIBRARY
+    echo "$MOT $BOOK_ID" >> $LLG_WORD_LIBRARY
   fi
 
   if [ $(( $NUM_LINE % 500 )) == "0" ]
@@ -27,17 +25,17 @@ function add_book()
 {
   BOOK_ORIGINAL_PATH=$(realpath $1)
   BOOK_NAME=$(basename $BOOK_ORIGINAL_PATH)
-  BOOK_PATH="${BOOKS_FOLDER}/${BOOK_NAME}"
+  BOOK_PATH="${LLG_BOOKS_FOLDER}/${BOOK_NAME}"
 
   echo "$BOOK_ORIGINAL_PATH ::: $BOOK_PATH"
   cp $BOOK_ORIGINAL_PATH $BOOK_PATH
 
-  BOOK_IN_LIBRARY=$(grep $BOOK_NAME $BOOK_LIBRARY)
+  BOOK_IN_LIBRARY=$(grep $BOOK_NAME $LLG_BOOK_LIBRARY)
   if [ -z "$BOOK_IN_LIBRARY" ]
   then
       ID=$(get_last_id)
       ID=$(( $ID + 1 ))
-      echo "$ID $BOOK_PATH" >> $BOOK_LIBRARY
+      echo "$ID $BOOK_PATH" >> $LLG_BOOK_LIBRARY
       echo "New book with id $ID included in the library!"
   else
     echo "Book alread in the library!"
@@ -47,7 +45,7 @@ function add_book()
 
 function get_last_id()
 {
-  ID=$(tail -1 $BOOK_LIBRARY | cut -d" " -f1)
+  ID=$(tail -1 $LLG_BOOK_LIBRARY | cut -d" " -f1)
   if [ $ID == "#" ]
   then
     ID="0"
@@ -62,7 +60,8 @@ function add_from_frequency_file()
   BOOK_PATH=$(head $FF -n 1 | cut -d" " -f3)
   add_book $BOOK_PATH
   BOOK_ID=$(get_last_id)
-  tail $FF -n +3 | nl -w1 -s" " | cut -d" " -f 1,2 | xargs -I{} bash -c "add_mot {} $NUM_WORDS $BOOK_ID $WORD_LIBRARY $IGNORED_LIBRARY"
+  echo "Including new words in the learning library"
+  tail $FF -n +3 | nl -w1 -s" " | cut -d" " -f 1,2 | xargs -I{} bash -c "add_mot {} $NUM_WORDS $BOOK_ID"
 }
 
 export -f add_mot
