@@ -1,4 +1,5 @@
-# fluent-shell
+<img src="logo.png" width="320px" />
+
 Learn a language with the help of the shell.
 
 ## How it works
@@ -20,26 +21,24 @@ New book with id 1 included in the library!
 >> ./learn-lang --word
 
 Do you know this word?
-   était
+   toujours
 (P)ass (I)gnore (L)earn (G)ot it!
 L
 
----Definitions for était---
+---Definitions for toujours---
 
-1	Corps liquide à la température et à la pression ordinaires, incolore, inodore, insipide, dont les molécules sont 
-composées d'un atome d'oxygène et de deux atomes d'hydrogène.
-2	Ce corps liquide, contenant en solution ou en suspension toutes sortes d'autres corps (sels, gaz, micro-organismes, 
-etc.), très répandu à la surface terrestre (eau de pluie, eau de mer, eau du robinet, etc.).
-3	La mer, les rivières, les lacs, etc.: Aller au bord de l'eau.
-4	Liquide organique ; sérosité: La cloque était pleine d'eau.
-5	Bouillon de cuisson: Eau de riz.
+1	la permanence dans la totalité du temps ou d'une période déterminée: Ces abus ont toujours existé.
+2	la répétition constante d'un fait, d'une situation: Quand il vient à Paris, il passe toujours me voir.
+3	la continuation, la persistance d'un état du passé jusqu'au moment présent ou au moment considéré (la négation pas se place après l'adverbe): Je ne suis toujours pas satisfait.
+4	une possibilité souvent très incertaine dans l'avenir (surtout après pouvoir ou après un impératif): Viens toujours, on verra bien.
+5	S'emploie comme intensif: C'est toujours mieux que rien.
 
 ---Examples---
 
-1	 On était au 28 juin, et il lui restait juste en poche trois francs quarante pour finir le mois.
-2	 Il était neuf heures un quart.
-3	 Il était marié et journaliste, dans une belle situation.
-4	 Il était bien changé, bien mûri.
+1	Les femmes avaient levé la tête vers lui, trois petites ouvrières, une maîtresse de musique entre deux âges, mal peignée, négligée, coiffée d’un chapeau toujours poussiéreux et vêtue toujours d’une robe de travers, et deux bourgeoises avec leurs maris, habituées de cette gargote à prix fixe.
+2	 Il avait l’air de toujours défier quelqu’un, les passants, les maisons, la ville entière, par chic de beau soldat tombé dans le civil.
+3	 Quelquefois cependant, grâce à sa belle mine et à sa tournure galante, il volait, par-ci, par-là, un peu d’amour, mais il espérait toujours plus et mieux.
+4	La foule glissait autour de lui, exténuée et lente, et il pensait toujours : « Tas de brutes !
 ```
 
 *(P)ass*: Skip the word, but do not exclude from current learning list.
