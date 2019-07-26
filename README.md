@@ -1,6 +1,6 @@
 <img src="logo.png" width="320px" />
 
-Learn a language with the help of the shell.
+Learn a foreign language with the help of the shell.
 
 ## How it works
 
