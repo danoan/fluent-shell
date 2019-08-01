@@ -1,6 +1,6 @@
 <img src="logo.png" width="320px" />
 
-Learn a foreign language with the help of the shell.
+Improve your French vocabulary with the help of the shell. 
 
 ## How it works
 
